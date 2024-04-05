@@ -1,37 +1,45 @@
-# Change Log
+# Changelog
 
-## 1.3.2
+## [Unreleased]
+
+### Changed
+
+- Rework changelog
+
+## 1.3.2 - 2024-01-01
 
 - Update minimum SDK version
 - Update check scripts & VSCode settings
 - Fix warnings
 
-## 1.3.1
+## 1.3.1 - 2024-01-01
 
 Add a `scheduleTask` callback via constructor or via `trigger()` to specify a own
 task scheduler method, e.g. `Future.microtask`
 
-## 1.2.0
+## 1.2.0 - 2024-01-01
 
 Add a `isTest` constructor parameter + `executeNow()` method control execution
 in test szenarios.
 
-## 1.1.0
+## 1.1.0 - 2024-01-01
 
 Added a `dispose` method to prevent late execution of asynchronous callbacks.
 
-## 1.0.0
+## 1.0.0 - 2024-01-01
 
 Updated dependencies.
 
-## 0.0.1+3
+## 0.0.1+3 - 2024-01-01
 
-Moved original source code to <https://github.com/inlavigo/gg_once_per_cycle>
+Moved original source code to [https://github.com/inlavigo/gg\_once\_per\_cycle](https://github.com/inlavigo/gg_once_per_cycle)
 
-## 0.0.1+2
+## 0.0.1+2 - 2024-01-01
 
 - Cleaned up code
 
-## 0.0.1+1
+## 0.0.1+1 - 2024-01-01
 
 - Initial version.
+
+[Unreleased]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.2...HEAD
