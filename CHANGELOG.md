@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Removed
+
+- 'Pipline: Disable cache'
+
 ## [1.3.3] - 2024-04-09
 
 ### Changed
@@ -44,4 +50,5 @@ Moved original source code to [https://github.com/inlavigo/gg\_once\_per\_cycle]
 
 - Initial version.
 
+[Unreleased]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.3...HEAD
 [1.3.3]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.2...1.3.3
