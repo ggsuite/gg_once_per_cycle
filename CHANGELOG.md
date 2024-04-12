@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Removed
+
+- dependency to gg\_install\_gg, remove ./check script
+
 ## [1.3.4] - 2024-04-09
 
 ### Removed
@@ -50,5 +56,6 @@ Moved original source code to [https://github.com/inlavigo/gg\_once\_per\_cycle]
 
 - Initial version.
 
+[Unreleased]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.4...HEAD
 [1.3.4]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.3...1.3.4
 [1.3.3]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.2...1.3.3
