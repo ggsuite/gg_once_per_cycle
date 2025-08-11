@@ -28,9 +28,7 @@ class GgOncePerCycle {
   /// executed during this run loop cycle.
   ///
   /// [If scheduleTask is set, this method will used to trigger the task]
-  void trigger({
-    void Function(void Function() task)? scheduleTask,
-  }) {
+  void trigger({void Function(void Function() task)? scheduleTask}) {
     if (_isTriggered) {
       return;
     }
