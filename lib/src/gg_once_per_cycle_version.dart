@@ -9,4 +9,4 @@
 // coverage:ignore-file
 
 /// The version of the `gg_once_per_cycle` package.
-const String ggOncePerCycleVersion = '1.3.6';
+const String ggOncePerCycleVersion = '1.4.0';
