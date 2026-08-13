@@ -1,25 +1,29 @@
 # Changelog
 
-## [Unreleased]
+## Unreleased
 
 ### Added
 
 - Add .gitattributes file
 
-## [1.3.5] - 2024-04-13
+### Changed
+
+- Rework copyright headers
+
+## 1.3.5 - 2024-04-13
 
 ### Removed
 
-- dependency to gg\_install\_gg, remove ./check script
+- dependency to gg_install_gg, remove ./check script
 - dependency pana
 
-## [1.3.4] - 2024-04-09
+## 1.3.4 - 2024-04-09
 
 ### Removed
 
 - 'Pipline: Disable cache'
 
-## [1.3.3] - 2024-04-09
+## 1.3.3 - 2024-04-09
 
 ### Changed
 
@@ -53,7 +57,7 @@ Updated dependencies.
 
 ## 0.0.1+3 - 2024-01-01
 
-Moved original source code to [https://github.com/inlavigo/gg\_once\_per\_cycle](https://github.com/inlavigo/gg_once_per_cycle)
+Moved original source code to [https://github.com/inlavigo/gg_once_per_cycle](https://github.com/inlavigo/gg_once_per_cycle)
 
 ## 0.0.1+2 - 2024-01-01
 
@@ -62,8 +66,3 @@ Moved original source code to [https://github.com/inlavigo/gg\_once\_per\_cycle]
 ## 0.0.1+1 - 2024-01-01
 
 - Initial version.
-
-[Unreleased]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.5...HEAD
-[1.3.5]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.4...1.3.5
-[1.3.4]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.3...1.3.4
-[1.3.3]: https://github.com/inlavigo/gg_once_per_cycle/compare/1.3.2...1.3.3
