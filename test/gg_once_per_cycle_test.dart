@@ -1,5 +1,5 @@
 import 'package:fake_async/fake_async.dart';
-import 'package:gg_once_per_cycle/gg_once_per_cycle.dart';
+import 'package:gg_once_per_cycle/src/gg_once_per_cycle.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -9,7 +9,7 @@ void main() {
       test('should be instantiated', () {
         fakeAsync((fake) {
           var callCounter = 0;
-          final callback = () => callCounter++;
+          int callback() => callCounter++;
           final triggerOnce = GgOncePerCycle(task: callback);
           triggerOnce.trigger();
           triggerOnce.trigger();
@@ -28,7 +28,7 @@ void main() {
         fakeAsync((fake) {
           // Create an object
           var callCounter = 0;
-          final callback = () => callCounter++;
+          int callback() => callCounter++;
           final triggerOnce = GgOncePerCycle(task: callback);
 
           // oncPerCycle is undisposed -> triggers are executed
@@ -43,6 +43,76 @@ void main() {
           fake.flushMicrotasks();
           expect(callCounter, callCounterBefore);
         });
+      });
+
+      test('should not automatically execute task when isTest is true', () {
+        fakeAsync((fake) {
+          // Create an object
+          var callCounter = 0;
+          int callback() => callCounter++;
+          final triggerOnce = GgOncePerCycle(task: callback, isTest: true);
+
+          // oncPerCycle is undisposed -> triggers are executed
+          triggerOnce.trigger();
+
+          // Lets wait.
+          fake.flushMicrotasks();
+
+          // Task is not executed, because isTest is true.
+          expect(callCounter, 0);
+
+          // Trigger the execution manually.
+          triggerOnce.executeNow();
+
+          // Now the task is executed.
+          expect(callCounter, 1);
+        });
+      });
+
+      test('should use scheduleTask callback when given in constructor', () {
+        // Create an object
+        var callCounter = 0;
+        int callback() => callCounter++;
+        var didUseOurScheduleMethod = false;
+
+        void scheduleTask(void Function() task) {
+          task();
+          didUseOurScheduleMethod = true;
+        }
+
+        final triggerOnce = GgOncePerCycle(
+          task: callback,
+          scheduleTask: scheduleTask,
+        );
+
+        // Trigger the task
+        triggerOnce.trigger();
+
+        // Now the task is executed immedediately
+        expect(callCounter, 1);
+        expect(didUseOurScheduleMethod, isTrue);
+      });
+
+      test('should use scheduleTask callback when given in trigger', () {
+        // Create an object
+        var callCounter = 0;
+        int callback() => callCounter++;
+
+        var didUseOurScheduleMethod = false;
+
+        void scheduleTask(void Function() task) {
+          task();
+          didUseOurScheduleMethod = true;
+        }
+
+        final triggerOnce = GgOncePerCycle(task: callback);
+
+        // Trigger the task with defining a scheduleTask method
+        triggerOnce.trigger(scheduleTask: scheduleTask);
+
+        // Now the task is executed immedediately
+        expect(callCounter, 1);
+        expect(didUseOurScheduleMethod, isTrue);
       });
     });
   });
